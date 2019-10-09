@@ -101,9 +101,10 @@ resource "cloudflare_page_rule" "free_3rd" {
 
 /// CF access rules:
 resource "cloudflare_access_rule" "whitelist" {
+  count    = "${var.whitelist_ip ? 1 : 0}"
   provider = "cloudflare.main" 
-  notes = "${var.group}-${var.name}"
-  mode  = "whitelist"
+  notes    = "${var.group}-${var.name}"
+  mode     = "whitelist"
   configuration {
     target = "ip"
     value  = "${var.server_ip}"

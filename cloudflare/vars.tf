@@ -10,6 +10,7 @@ variable "domain_srv" {}
 variable "domain_list" { default = [] }
 variable "domain_is_sub" { default = false }
 variable "server_ip" { default = "10.10.10.10" }
+variable "whitelist_ip" { default = true }
 variable "cf_setting_override" { default = true }
 variable "cf_proxied" { default = true }
 variable "cf_always_https" { default = "on" }
